@@ -225,7 +225,7 @@ new_df['tags'][0]
 >>>>'In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization. Action Adventure Fantasy ScienceFiction cultureclash future spacewar spacecolony society spacetravel futuristic romance space alien tribe alienplanet cgi marine soldier battle loveaffair antiwar powerrelations mindandsoul 3d SamWorthington ZoeSaldana SigourneyWeaver JamesCameron'
 ```
 
-**Step 10:**
+**Step 9:**
 
 We will use KNN algorithm to build the recommender system. Before entering the model let's proceed with the text vectorization which you already learned in the NLP lesson.
 
@@ -242,7 +242,7 @@ vectors.shape
 
 If you wish to know the 5000 most frequently used words you can use cv.get_feature_names()
 
-**Step 11:**
+**Step 10:**
 
 Let's find the cosine_similarity among the movies. Go ahead and run the following code lines in your project to see the results.
 
@@ -260,7 +260,7 @@ similarity[0]
 sorted(list(enumerate(similarity[0])),reverse =True , key = lambda x:x[1])[1:6]
 ```
 
-**Step 12:**
+**Step 11:**
 
 Finally, create a recommendation function based on the cosine_similarity. This function should recommend the 5 most similar movies.
 
@@ -274,7 +274,7 @@ def recommend(movie):
         print(new_df.iloc[i[0]].title)
 ```
 
-**Step 13:**
+**Step 12:**
 
 Check your recommneder system. Run to see the recommnedations.
 
@@ -282,7 +282,7 @@ Check your recommneder system. Run to see the recommnedations.
 recommend('choose a movie here')
 ```
 
-**Step 14:**
+**Step 13:**
 
 As always, use your notebook to experiment and make sure you are getting the results you want. 
 
