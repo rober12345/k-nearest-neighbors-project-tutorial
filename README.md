@@ -1,1 +1,72 @@
-# k-nearest-neighbors-project-tutorial
+<!-- hide -->
+# k-nearest-neighbors Project Tutorial
+<!-- endhide -->
+
+- When reading the k-nearest neighbors theory lesson, we also read an introduction to recommender systems. In this guided project we will learn how to build a simple movie recommender system using k-nearest neighbors algorithm.
+
+- This project contains 2 datasets with different features for the same 5000 movies, so you should merge them.
+
+## 🌱  How to start this project
+
+You will not be forking this time, please take some time to read this instructions:
+
+1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template).
+2. Open the recently created repostiroy on Gitpod by using the [Gitpod button extension](https://www.gitpod.io/docs/browser-extension/).
+3. Once Gitpod VSCode has finished opening you start your project following the Instructions below.
+
+## 🚛 How to deliver this project
+
+Once you are finished creating your movie recommender system, make sure to commit your changes, push to your repository and go to 4Geeks.com to upload the repository link.
+
+
+## 📝 Instructions
+
+**Movie recommender system**
+
+Can we predict which films will be highly rated, even if they are not a commercial success?
+
+This dataset is a subset of the huge TMDB Movie Database API, containing only 5000 movies from the total number.
+
+Dataset links:
+
+
+
+
+
+**Step 1:**
+
+ Load your dataset and do the necessary transformations on your target variable.
+
+**Step 2:**
+
+Use NLP techniques to preprocess the data. 
+Here is another idea on how to exclude some words by creating new columns:
+
+```py
+df['len_url'] = df['url'].apply(lambda x : len(x))
+df['contains_subscribe'] = df['url'].apply(lambda x : 1 if "subscribe" in x else 0)
+df['contains_hash'] = df['url'].apply(lambda x : 1 if "#" in x else 0)
+df['num_digits'] = df['url'].apply(lambda x : len("".join(_ for _ in x if _.isdigit())) )
+df['non_https'] = df['url'].apply(lambda x : 1 if "https" in x else 0)
+df['num_words'] = df['url'].apply(lambda x : len(x.split("/")))
+
+target = 'is_spam'
+features = [f for f in df.columns if f not in ["url", target]]
+X_train, X_test, y_train, y_test = train_test_split(df[features], df[target], test_size=0.2, random_state=0)
+```
+
+**Step 3:**
+
+Use Support Vector machine to build a url spam classifier.
+
+**Step 4:**
+
+As always, use your notebook to experiment and make sure you are getting the results you want. 
+
+Use you app.py file to save your defined steps, pipelines or functions in the right order. 
+
+In your README file write a brief summary.
+
+Solution guide: 
+
+https://github.com/4GeeksAcademy/NLP-project-tutorial/blob/main/solution_guide.ipynb
