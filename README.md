@@ -99,7 +99,7 @@ movies.dropna(inplace = True)
 
 **Step 6:**
 
-As you can see there are some columns with json format. With the following code, you can view what genres the first row includes.
+As you can see there are some columns with json format. With the following code, you can view what genres are included in the first row.
 
 ```py
 movies.iloc[0].genres
@@ -107,7 +107,7 @@ movies.iloc[0].genres
 >>>>[{"id": 28, "name": "Action"}, {"id": 12, "name": "Adventure"}, {"id": 14, "name": "Fantasy"}, {"id": 878, "name": "Science Fiction"}]
 ```
 
-So we will start converting these columns with a function to obtain only the genres, without a json format. We are only interested in the values of the 'name' keys.
+We will start converting these columns using a function to obtain only the genres, without a json format. We are only interested in the values of the 'name' keys.
 
 ```py
 import ast
@@ -148,13 +148,13 @@ def convert3(obj):
 movies['cast'] = movies['cast'].apply(convert3)
 ```
 
-You can see how your dataset is coming along:
+You can see how our dataset is coming along:
 
 ```py
 movies.head(1)
 ```
 
-The only columns left to modify are 'crew' and 'overview'. For the 'crew', we will create a new function that lets us obtain only the values of the 'name' keys filtering with only those whose 'job' value is 'Director'. To sum up, we are trying to get the name of the director.
+The only columns left to modify are 'crew' and 'overview'. For the 'crew', we will create a new function that allows to obtain only the values of the 'name' keys for whose 'job' value is 'Director'. To sum up, we are trying to get the name of the director.
 
 ```py
 def fetch_director(obj):
@@ -206,7 +206,7 @@ movies['keywords'] = movies['keywords'].apply(collapse)
 **Step 8:**
 
 We will reduce our dataset by combining all our previous converted columns into only one column named 'tags' (which we will create).
-This column will now have ALL items separated by commas, but we will remove them by using lambda x :" ".join(x).
+This column will now have ALL items separated by commas, but we will ignore commas by using lambda x :" ".join(x).
 
 ```py
 movies['tags'] = movies['overview']+movies['genres']+movies['keywords']+movies['cast']+movies['crew']
@@ -276,7 +276,7 @@ def recommend(movie):
 
 **Step 12:**
 
-Check your recommneder system. Run to see the recommnedations.
+Check your recommender system by introducing a movie. Run to see the recommendations.
 
 ```py
 recommend('choose a movie here')
