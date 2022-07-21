@@ -76,11 +76,17 @@ movies = movies.merge(credits, on='title')
 We will work only with the following columns:
 
 -movie_id
+
 -title
+
 -overview
+
 -genres
+
 -keywords
+
 -cast
+
 -crew
 
 ```py
