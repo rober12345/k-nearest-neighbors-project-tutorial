@@ -8,6 +8,7 @@
 	"technologies": ["data-science", "machine-learning"],
 	"difficulty": "beginner",
 	"syntax": "python",
+    "projectType": "project",
 	"duration" : 2,
 	"description" : "Use KNN algorithm to build a simple movie recommender system."
 }
