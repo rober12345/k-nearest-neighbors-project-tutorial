@@ -2,7 +2,7 @@
 # k-nearest-neighbors Project Tutorial
 <!-- endhide -->
 
-- When reading the k-nearest neighbors theory lesson, we also read an introduction to recommender systems. In this guided project we will learn how to build a simple movie recommender system using k-nearest neighbors algorithm.
+- When reading the k-nearest neighbors theory lesson, we also read an introduction to recommender systems. In this guided project, we will learn how to build a simple movie recommender system using the k-nearest neighbors algorithm.
 
 - This project contains 2 datasets with different features for the same 5000 movies, so you should merge them.
 
@@ -12,7 +12,7 @@ You will not be forking this time, please take some time to read this instructio
 
 1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template).
 2. Open the recently created repostiroy on Gitpod by using the [Gitpod button extension](https://www.gitpod.io/docs/browser-extension/).
-3. Once Gitpod VSCode has finished opening you start your project following the Instructions below.
+3. Once Gitpod VSCode has finished opening, you start your project following the Instructions below.
 
 ## 🚛 How to deliver this project
 
@@ -105,7 +105,7 @@ movies.dropna(inplace = True)
 
 **Step 6:**
 
-As you can see there are some columns with json format. With the following code, you can view what genres are included in the first row.
+As you can see, there are some columns in json format. With the following code, you can view what genres are included in the first row.
 
 ```py
 movies.iloc[0].genres
@@ -160,7 +160,7 @@ You can see how our dataset is coming along:
 movies.head(1)
 ```
 
-The only columns left to modify are 'crew' and 'overview'. For the 'crew', we will create a new function that allows to obtain only the values of the 'name' keys for whose 'job' value is 'Director'. To sum up, we are trying to get the name of the director.
+The only columns left to modify are 'crew' and 'overview'. For the 'crew', we will create a new function that allows obtaining only the values of the 'name' keys for whose 'job' value is 'Director'. To sum up, we are trying to get the name of the director.
 
 ```py
 def fetch_director(obj):
@@ -182,7 +182,7 @@ Finally, let's look at the first row of the 'overview' column:
 movies.overview[0]
 ```
 
-For the 'overview' column, we will convert it in a list by using 'split()' methode.
+For the 'overview' column, we will convert it into a list by using 'split()' methode.
 
 ```py
 movies['overview'] = movies['overview'].apply(lambda x : x.split())
@@ -190,7 +190,7 @@ movies['overview'] = movies['overview'].apply(lambda x : x.split())
 
 **Step 7:**
 
-For the recommender system to do not get confused, for example between 'Jennifer Aniston' and 'Jennifer Conelly', we will remove spaces between words with a function.
+For the recommender system to not get confused, for example between 'Jennifer Aniston' and 'Jennifer Conelly', we will remove spaces between words with a function.
 
 ```py
 def collapse(L):
@@ -200,7 +200,7 @@ def collapse(L):
     return L1
 ```
 
-Now let's apply our function to the 'genres', 'cast', 'crew' and 'keywords' columns.
+Now let's apply our function to the 'genres', 'cast', 'crew', and 'keywords' columns.
 
 ```py
 movies['cast'] = movies['cast'].apply(collapse)
@@ -211,7 +211,7 @@ movies['keywords'] = movies['keywords'].apply(collapse)
 
 **Step 8:**
 
-We will reduce our dataset by combining all our previous converted columns into only one column named 'tags' (which we will create).
+We will reduce our dataset by combining all our previously converted columns into only one column named 'tags' (which we will create).
 This column will now have ALL items separated by commas, but we will ignore commas by using lambda x :" ".join(x).
 
 ```py
@@ -292,9 +292,9 @@ recommend('choose a movie here')
 
 As always, use your notebook to experiment and make sure you are getting the results you want. 
 
-Use you app.py file to save your defined steps, pipelines or functions in the right order. 
+Use your app.py file to save your defined steps, pipelines or functions in the right order. 
 
-In your README file write a brief summary.
+In your README file, write a brief summary.
 
 Solution guide: 
 

@@ -16,7 +16,7 @@ Esta vez no se hará Fork, tómate un tiempo para leer estas instrucciones:
 
 ## 🚛 Cómo entregar este proyecto
 
-Una vez que hayas terminado de resolver los ejercicios, asegúrate de confirmar tus cambios, hazle "push" a el fork de tu repositorio y ve a 4Geeks.com para subir el enlace del repositorio.
+Una vez que hayas terminado de resolver los ejercicios, asegúrate de confirmar tus cambios, hazle "push" al fork de tu repositorio y ve a 4Geeks.com para subir el enlace del repositorio.
 
 ## 📝 Instrucciones
 
@@ -189,7 +189,7 @@ movies['overview'] = movies['overview'].apply(lambda x : x.split())
 
 **Paso 7:**
 
-Para que el sistema de recomendación no se confunda, por ejemplo entre 'Jennifer Aniston' y 'Jennifer Conelly', quitaremos los espacios entre palabras con función.
+Para que el sistema de recomendación no se confunda, por ejemplo, entre 'Jennifer Aniston' y 'Jennifer Conelly', quitaremos los espacios entre palabras con función.
 
 ```py
 def collapse(L):
