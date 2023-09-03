@@ -1,5 +1,5 @@
 <!-- hide -->
-# K-Vecinos más cercanos
+# K-Vecinos más cercanos - Guía paso a paso
 <!-- endhide -->
 
 - Comprender un dataset nuevo.
@@ -8,15 +8,15 @@
 
 ## 🌱  Cómo iniciar este proyecto
 
-Esta vez no se hará Fork, tómate un tiempo para leer estas instrucciones:
+Sigue las siguientes instrucciones:
 
-1. Crear un nuevo repositorio basado en el [proyecto de Machine Learing](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) [haciendo clic aquí](https://github.com/4GeeksAcademy/machine-learning-python-template).
+1. Crea un nuevo repositorio basado en el [proyecto de Machine Learing](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) [haciendo clic aquí](https://github.com/4GeeksAcademy/machine-learning-python-template).
 2. Abre el repositorio creado recientemente en Codespace usando la [extensión del botón de Codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
 3. Una vez que el VSCode del Codespace haya terminado de abrirse, comienza tu proyecto siguiendo las instrucciones a continuación.
 
 ## 🚛 Cómo entregar este proyecto
 
-Una vez que hayas terminado de resolver los ejercicios, asegúrate de confirmar tus cambios, hazle "push" al fork de tu repositorio y ve a 4Geeks.com para subir el enlace del repositorio.
+Una vez que hayas terminado de resolver el caso práctico, asegúrate de confirmar tus cambios, haz push a tu repositorio y ve a 4Geeks.com para subir el enlace del repositorio.
 
 ## 📝 Instrucciones
 
@@ -57,9 +57,9 @@ Una vez hayamos terminado de procesar las columnas y que el modelo de recomendac
 Por último, reduciremos nuestro conjunto de datos combinando todas nuestras columnas convertidas anteriores en una sola columna llamada `tags` (que crearemos). Esta columna ahora tendrá todos los elementos separados por comas y luego las reemplazaremos por espacios en blanco. Debería quedar algo así:
 
 ```py
-new_df['tags'][0]
+new_df["tags"][0]
 
->>>>'In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization. Action Adventure Fantasy ScienceFiction cultureclash future spacewar spacecolony society spacetravel futuristic romance space alien tribe alienplanet cgi marine soldier battle loveaffair antiwar powerrelations mindandsoul 3d SamWorthington ZoeSaldana SigourneyWeaver JamesCameron'
+>>>>"In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization. Action Adventure Fantasy ScienceFiction cultureclash future spacewar spacecolony society spacetravel futuristic romance space alien tribe alienplanet cgi marine soldier battle loveaffair antiwar powerrelations mindandsoul 3d SamWorthington ZoeSaldana SigourneyWeaver JamesCameron"
 ```
 
 #### Paso 4: Construye un KNN
@@ -91,5 +91,7 @@ def recommend(movie):
 De tal forma que devolveríamos las 5 películas más similares a la que introduzcamos en el título. Podríamos utilizarla como sigue:
 
 ```py
-recommend("introduce una película")
+recommend("Introduce una película")
 ```
+
+> NOTA: Solución: https://github.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/blob/main/solution.ipynb

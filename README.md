@@ -1,5 +1,5 @@
 <!-- hide -->
-# K-Vecinos más cercanos
+# K-Nearest neighbors - Step by step guide
 <!-- endhide -->
 
 - Understanding a new dataset.
@@ -8,7 +8,7 @@
 
 ## 🌱  How to start this project
 
-You will not be forking this time, please take some time to read these instructions:
+Follow the instructions below:
 
 1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template).
 2. Open the newly created repository in Codespace using the [Codespace button extension](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
@@ -16,7 +16,7 @@ You will not be forking this time, please take some time to read these instructi
 
 ## 🚛 How to deliver this project
 
-Once you are finished creating your linear regression model, make sure to commit your changes, push to your repository and go to 4Geeks.com to upload the repository link.
+Once you have finished solving the exercises, be sure to commit your changes, push to your repository and go to 4Geeks.com to upload the repository link.
 
 ## 📝 Instructions
 
@@ -57,9 +57,9 @@ Once we have finished processing the columns and the recommendation model is not
 Finally, we will reduce our dataset by combining all of our previous converted columns into a single column called `tags` (which we will create). This column will now have all the elements separated by commas and then we will replace them with blanks. It should look something like this:
 
 ```py
-new_df['tags'][0]
+new_df["tags"][0]
 
->>>>'In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization. Action Adventure Fantasy ScienceFiction cultureclash future spacewar spacecolony society spacetravel futuristic romance space alien tribe alienplanet cgi marine soldier battle loveaffair antiwar powerrelations mindandsoul 3d SamWorthington ZoeSaldana SigourneyWeaver JamesCameron'
+>>>>"In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization. Action Adventure Fantasy ScienceFiction cultureclash future spacewar spacecolony society spacetravel futuristic romance space alien tribe alienplanet cgi marine soldier battle loveaffair antiwar powerrelations mindandsoul 3d SamWorthington ZoeSaldana SigourneyWeaver JamesCameron"
 ```
 
 #### Step 4: Build a KNN
@@ -91,5 +91,7 @@ def recommend(movie):
 In such a way that we would return the 5 movies most similar to the one we enter in the title. We could use it as follows:
 
 ```py
-recommend("enter a film name")
+recommend("Enter a film name")
 ```
+
+> NOTE: Solution: https://github.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/blob/main/solution.ipynb
