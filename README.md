@@ -24,13 +24,13 @@ Once you have finished solving the exercises, be sure to commit your changes, pu
 
 Would we be able to predict which movies might or might not be a commercial success? This dataset collects part of the knowledge from the API [TMDB](https://www.themoviedb.org/), which contains only 5000 movies out of the total number. The following resources are available:
 
-> **tmdb_5000_movies**:
+- **tmdb_5000_movies**:
 
 ```text
 https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_movies.csv
 ```
 
-> **tmdb_5000_credits**:
+- **tmdb_5000_credits**:
 
 ```text
 https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_credits.csv
