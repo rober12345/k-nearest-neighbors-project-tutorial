@@ -6,31 +6,39 @@
 - Model the data using a KNN.
 - Analyze the results and optimize the model.
 
-## 🌱  How to start this project
+## 🌱 How to start this project
 
 Follow the instructions below:
 
-1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template).
+1. Create a new repository based on [machine learning project](https://github.com/4GeeksAcademy/machine-learning-python-template) by [clicking here](https://github.com/4GeeksAcademy/machine-learning-python-template/generate).
 2. Open the newly created repository in Codespace using the [Codespace button extension](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
 3. Once the Codespace VSCode has finished opening, start your project by following the instructions below.
 
 ## 🚛 How to deliver this project
 
-Once you have finished solving the exercises, be sure to commit your changes, push to your repository and go to 4Geeks.com to upload the repository link.
+Once you have finished solving the exercises, be sure to commit your changes, push them to your repository, and go to 4Geeks.com to upload the repository link.
 
 ## 📝 Instructions
 
 ### Movie recommendation system
 
-Would we be able to predict which movies might or might not be a commercial success? This dataset collects part of the knowledge from the API [TMDB](https://www.themoviedb.org/?language=es), which contains only 5000 movies out of the total number. The following resources are available:
+Would we be able to predict which movies might or might not be a commercial success? This dataset collects part of the knowledge from the API [TMDB](https://www.themoviedb.org/), which contains only 5000 movies out of the total number. The following resources are available:
 
-- **tmdb_5000_movies**: `https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_movies.csv`
+- **tmdb_5000_movies**:
 
-- **tmdb_5000_credits**: `https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_credits.csv`
+```text
+https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_movies.csv
+```
+
+- **tmdb_5000_credits**:
+
+```text
+https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_credits.csv
+```
 
 #### Step 1: Loading the dataset
 
-We must load the two files and store them in two separate data structures (Pandas DataFrames). On one side we will have stored the information of the movies and their credits.
+We must load the two files and store them in two separate data structures (Pandas DataFrames). On one side, we will have stored the information about the movies and their credits.
 
 #### Step 2: Creation of a database
 
@@ -48,7 +56,7 @@ Now, clean the generated table and leave only the following columns:
 
 #### Step 3: Transform the data
 
-As you can see, there are some JSON formatted columns. Select, from each of the JSONs, select the `name` attribute and replace the `genres` and `keywords` columns. For the `cast` column, select the first three names.
+As you can see, there are some JSON formatted columns. From each of the JSONs, select the `name` attribute and replace the `genres` and `keywords` columns. For the `cast` column, select the first three names.
 
 The only columns left to modify are `crew` (team) and `overview` (summary). For the first column, convert it to contain the name of the director. For the second, convert it to a list.
 
@@ -64,9 +72,9 @@ new_df["tags"][0]
 
 #### Step 4: Build a KNN
 
-To solve this problem we will create our own KNN. The first thing to do is to vectorize the text following the same steps you learned in the previous lesson.
+To solve this problem we will create our own KNN. The first thing to do is to vectorize the text, following the same steps you learned in the previous lesson.
 
-Once you have done that, we would have to choose a distance to compare text. In this module we have seen a few, and the only one compatible with what we want to do is the `cosine distance`:
+Once you have done that, we will have to choose a distance to compare texts. In this module we have seen a few, and the only one compatible with what we want to do is the `cosine distance`:
 
 ```py
 from sklearn.metrics.pairwise import cosine_similarity
@@ -74,7 +82,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 similarity = cosine_similarity(vectors)
 ```
 
-With this code we can see the similarity between our vectors (vector representations of the `tags` column).
+With this code, we can see the similarity between our vectors (vector representations of the `tags` column).
 
 Finally, we can design our similarity function based on the cosine distance. Our proposal is as follows:
 
@@ -94,4 +102,4 @@ In such a way that we would return the 5 movies most similar to the one we enter
 recommend("Enter a film name")
 ```
 
-> NOTE: Solution: https://github.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/blob/main/solution.ipynb
+> Note: We also incorporated the solution samples on `./solution.ipynb` that we strongly suggest you only use if you are stuck for more than 30 min or if you have already finished and want to compare it with your approach.

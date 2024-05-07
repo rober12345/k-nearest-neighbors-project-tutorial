@@ -6,11 +6,11 @@
 - Modelar los datos utilizando un KNN.
 - Analizar los resultados y optimizar el modelo.
 
-## 🌱  Cómo iniciar este proyecto
+## 🌱 Cómo iniciar este proyecto
 
 Sigue las siguientes instrucciones:
 
-1. Crea un nuevo repositorio basado en el [proyecto de Machine Learing](https://github.com/4GeeksAcademy/machine-learning-python-template/generate) [haciendo clic aquí](https://github.com/4GeeksAcademy/machine-learning-python-template).
+1. Crea un nuevo repositorio basado en el [proyecto de Machine Learning](https://github.com/4GeeksAcademy/machine-learning-python-template) [haciendo clic aquí](https://github.com/4GeeksAcademy/machine-learning-python-template/generate).
 2. Abre el repositorio creado recientemente en Codespace usando la [extensión del botón de Codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
 3. Una vez que el VSCode del Codespace haya terminado de abrirse, comienza tu proyecto siguiendo las instrucciones a continuación.
 
@@ -22,15 +22,23 @@ Una vez que hayas terminado de resolver el caso práctico, asegúrate de confirm
 
 ### Sistema de recomendación de películas
 
-¿Seríamos capaces de predecir qué películas podrían ser o no un éxito comercial? Este conjunto de datos recopila parte del conocimiento de la API [TMDB](https://www.themoviedb.org/?language=es), que contiene solo 5000 películas del número total. Se disponibilizan los siguientes recursos:
+¿Seríamos capaces de predecir qué películas podrían ser o no un éxito comercial? Este conjunto de datos recopila parte del conocimiento de la API [TMDB](https://www.themoviedb.org/?language=es), que contiene solo 5000 películas del número total. Se dispone de los siguientes recursos:
 
-- **tmdb_5000_movies**: `https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_movies.csv`
+- **tmdb_5000_movies**:
 
-- **tmdb_5000_credits**: `https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_credits.csv`
+```text
+https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_movies.csv
+```
+
+- **tmdb_5000_credits**:
+
+````text
+https://raw.githubusercontent.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/main/tmdb_5000_credits.csv
+```
 
 #### Paso 1: Carga del conjunto de datos
 
-Debemos cargar los dos ficheros y almacenarlos en dos estructuras de datos (DataFrames de Pandas) separadas. Por un lado tendremos almacenada la información de las películas y sus créditos.
+Debemos cargar los dos ficheros y almacenarlos en dos estructuras de datos (DataFrames de Pandas) separadas. Por un lado, tendremos almacenada la información de las películas y sus créditos.
 
 #### Paso 2: Creación de una base de datos
 
@@ -48,7 +56,7 @@ Ahora, limpia la tabla generada y deja solo las siguientes columnas:
 
 #### Paso 3: Transforma los datos
 
-Como puedes ver, hay algunas columnas con formato JSON. Selecciona, de cada uno de los JSONs, selecciona el atributo `name` y reemplaza las columnas `genres` y `keywords`. Para la columna `cast`, selecciona los tres primeros nombres.
+Como puedes ver, hay algunas columnas con formato JSON. De cada uno de los JSONs, selecciona el atributo `name` y reemplaza las columnas `genres` y `keywords`. Para la columna `cast`, selecciona los tres primeros nombres.
 
 Las únicas columnas que quedan por modificar son `crew` (equipo) y `overview` (resumen). Para la primera columna, transfórmala para que contenga el nombre del director. Para la segunda, conviértela en una lista.
 
@@ -74,9 +82,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 similarity = cosine_similarity(vectors)
 ```
 
-Con este código podremos ver la similaridad existente entre nuestros vectores (representaciones vectoriales de la columna `tags`).
+Con este código podremos ver la similitud existente entre nuestros vectores (representaciones vectoriales de la columna `tags`).
 
-Finalmente, podemos diseñar nuestra función de similaridad basada en la distancia del coseno. Nuestra propuesta es la siguiente:
+Finalmente, podemos diseñar nuestra función de similitud basada en la distancia del coseno. Nuestra propuesta es la siguiente:
 
 ```py
 def recommend(movie):
@@ -94,4 +102,4 @@ De tal forma que devolveríamos las 5 películas más similares a la que introdu
 recommend("Introduce una película")
 ```
 
-> NOTA: Solución: https://github.com/4GeeksAcademy/k-nearest-neighbors-project-tutorial/blob/main/solution.ipynb
+> Nota: También incorporamos muestras de solución en `./solution.ipynb` que te sugerimos honestamente que solo uses si estás atascado por más de 30 minutos o si ya has terminado y quieres compararlo con tu enfoque.
